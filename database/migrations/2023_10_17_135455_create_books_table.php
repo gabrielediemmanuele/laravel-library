@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -15,7 +14,15 @@ return new class extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('title', 50);
+            $table->string('author', 30);
+            $table->float('price', 5, 2);
+            $table->string('genre', 20);
+            $table->string('editor_house', 30);
+            $table->unsignedInteger('pages');
+            $table->string('edition', 30);
+            $table->unsignedInteger('series_number')->unique();
+            $table->tinyInteger('copies_number');
         });
     }
 

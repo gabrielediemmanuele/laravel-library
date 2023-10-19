@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
   <div class="container">
-    <a class="navbar-brand" href="{{ route('home') }}">Navbar</a>
+    <a class="navbar-brand" href="{{ route('home') }}">BOOKS STORE</a>
     <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId"
       aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -12,14 +12,18 @@
             aria-current="page">Home<span class="visually-hidden">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link {{ Route::currentRouteName() == 'book' ? 'active' : '' }}" href="{{ route('book') }}">Books</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">Dropdown</a>
           <div class="dropdown-menu" aria-labelledby="dropdownId">
-            <a class="dropdown-item" href="#">Action 1</a>
-            <a class="dropdown-item" href="#">Action 2</a>
+            <a class="dropdown-item" href="#">Miruna</a>
+            <a class="dropdown-item" href="#">Luigi</a>
+            <a class="dropdown-item" href="#">Gh0st</a>
+            <a class="dropdown-item" href="#">Alessandro</a>
+            <a class="dropdown-item" href="#">Mauro</a>
+            
           </div>
         </li>
       </ul>

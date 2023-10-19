@@ -9,10 +9,11 @@ use App\Models\Book;
 
 class BookController extends Controller
 {
+    /* Invio alla route i dati: titolo e tutti i libri presi dal model (migration + seeder) */
     public function index()
     {
         $title = "Books";
-        $trains = Book::all();
+        $books = Book::all();
         return view('book', compact('books'), compact('title'));
     }
 }

@@ -3,10 +3,10 @@
 namespace Database\Seeders;
 
 /* 
- * mi aggaincio al model di books */
+ ! mi aggaincio al model di books */
 use App\Models\Book;
 /* 
- * uso Faker per generare dei finti libri */
+ ! uso Faker per generare dei finti libri */
 use Faker\Generator as Faker;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -25,7 +25,7 @@ class BooksTableSeeders extends Seeder
             $book = new Book();
 
             $book->title = $faker->words(3, true);
-            $book->author = $faker->firstNameFemale();
+            $book->author = $faker->firstNameFemale() . " " . $faker->lastName();
             $book->price = $faker->randomFloat(2, 0, 150);
             $book->genre = $faker->words(3, true);
             $book->editor_house = $faker->company();

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\PageController;
 
 use Illuminate\Support\Facades\Route;
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PageController::class, 'index'])->name('home');
+
+/* rotta per il controller dei libri  */
+
+Route::get('/book', [BookController::class, 'index'])->name('book');

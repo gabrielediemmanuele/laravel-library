@@ -20,7 +20,7 @@ class BooksTableSeeders extends Seeder
      * @return void
      */
     public function run(Faker $faker)
-    {
+    { /* creo un ciclo for per dire quanti elementi voglio generare  */
         for ($i = 0; $i < 10; $i++) {
             $book = new Book();
 

@@ -12,7 +12,7 @@ class BookController extends Controller
     public function index()
     {
         $title = "Books";
-        $trains = Book::all();
+        $books = Book::all();
         return view('book', compact('books'), compact('title'));
     }
 }

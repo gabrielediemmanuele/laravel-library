@@ -18,10 +18,10 @@ return new class extends Migration {
             $table->string('title', 50);
             $table->string('author', 30);
             $table->float('price', 5, 2);
-            $table->string('genre', 20);
+            $table->text('genre');
             $table->string('editor_house', 30);
             $table->smallInteger('pages');
-            $table->tinyInteger('edition', 30);
+            $table->tinyInteger('edition');
             $table->string('series_number')->unique();
             $table->tinyInteger('copies_number');
         });

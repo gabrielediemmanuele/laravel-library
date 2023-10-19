@@ -9,6 +9,7 @@ use App\Models\Book;
 
 class BookController extends Controller
 {
+    /* Invio alla route i dati: titolo e tutti i libri presi dal model (migration + seeder) */
     public function index()
     {
         $title = "Books";

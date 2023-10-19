@@ -21,6 +21,20 @@ class BooksTableSeeders extends Seeder
      */
     public function run(Faker $faker)
     {
+        for ($i = 0; $i < 10; $i++) {
+            $book = new Book();
 
+            $book->title = $faker->words(3, true);
+            $book->author = $faker->firstNameFemale();
+            $book->price = $faker->randomFloat(2, 0, 150);
+            $book->genre = $faker->words(3, true);
+            $book->editor_house = $faker->company();
+            $book->pages = $faker->randomNumber(3);
+            $book->edition = $faker->randomDigit();
+            $book->series_number = $faker->randomNumber(6);
+            $book->copies_number = $faker->randomDigit();
+
+            $book->save();
+        }
     }
 }

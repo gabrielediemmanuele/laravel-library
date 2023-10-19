@@ -25,7 +25,7 @@ class BooksTableSeeders extends Seeder
             $book = new Book();
 
             $book->title = $faker->words(3, true);
-            $book->author = $faker->firstNameFemale();
+            $book->author = $faker->firstNameFemale() . " " . $faker->lastName();
             $book->price = $faker->randomFloat(2, 0, 150);
             $book->genre = $faker->words(3, true);
             $book->editor_house = $faker->company();

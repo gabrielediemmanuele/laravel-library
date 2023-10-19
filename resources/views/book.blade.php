@@ -12,7 +12,7 @@
             <ul class="list-group list-group-flush">
               <li class="list-group-item"><strong>Titolo: </strong>{{$book->title}}</li>
               <li class="list-group-item"><strong>Autore: </strong>{{$book->author}}</li>
-              <li class="list-group-item"><strong>Prezzo: </strong>{{$book->price}}</li>
+              <li class="list-group-item"><strong>Prezzo: </strong>$ {{$book->price}}</li>
               <li class="list-group-item"><strong>Genere: </strong>{{$book->genre}}</li>
               <li class="list-group-item"><strong>Casa Editrice: </strong>{{$book->editor_house}}</li>
               <li class="list-group-item"><strong>Pagine: </strong>{{$book->pages}}</li>

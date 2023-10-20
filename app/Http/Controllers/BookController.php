@@ -43,15 +43,15 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-
-        /* create a new comic*/
+        /* creo un nuovo libro */
         $book = new Book();
 
-        /* fill with form information */
+        $data = $request->all();
+
+        /* lo riempo di informazioni */
         $book->fill($data);
 
-        /* save inside database */
+        /* le salvo nel database */
         $book->save();
 
         /* 

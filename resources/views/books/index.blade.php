@@ -39,16 +39,16 @@
                         <td scope="col">{{ $book->series_number }}</td>
                         <td scope="col">{{ $book->copies_number }}</td>
 
-                        <td class="d-flex flex-row border-bottom-0 gap-2 "> 
-                            <a href=" {{ route('books.show', $book) }}"> 
+                        <td class="d-flex"> 
+                            <a href=" {{ route('books.show', $book) }}" class="mx-1"> 
                                 <i class="fa-solid fa-eye"></i>
                             </a> 
 
-                            <a href=" {{ route('books.show', $book) }}"> 
+                            <a href=" {{ route('books.show', $book) }}" class="mx-1"> 
                                 <i class="fa-solid fa-pencil"></i>
                             </a> 
 
-                            <a href=" {{ route('books.show', $book) }}"> 
+                            <a href=" {{ route('books.show', $book) }}" class="mx-1"> 
                                 <i class="fa-solid fa-trash"></i>
                             </a> 
                         </td> 

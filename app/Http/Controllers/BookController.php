@@ -43,14 +43,28 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        /* creo un nuovo libro */
+        $book = new Book();
+
+        $data = $request->all();
+
+        /* lo riempo di informazioni */
+        $book->fill($data);
+
+        /* le salvo nel database */
+        $book->save();
+
+        /* 
+        ! REMEMBER TO CODE IN MODEL FOR FILLABLE CONTENTS  
+        */
+        return redirect()->route('books.show', $book);
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * * @return \Illuminate\Http\Response
      */
     public function show(Book $book)
     {

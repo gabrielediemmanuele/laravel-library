@@ -41,7 +41,7 @@
 
             <div class="col-3" class="form-label">
                 <label for="pages">Pagine</label>
-                <input type="number" id="price" name="price" class="form-control">
+                <input type="number" id="pages" name="pages" class="form-control">
             </div>
 
             <div class="col-3">

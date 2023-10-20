@@ -8,6 +8,9 @@
 
 @section('main-content')
     <section class="container mt-5">
+        <a href="{{ route('books.create')}}" class="btn btn-primary">
+            + Add New Book
+        </a>
         <h1>{{ $title }}</h1>
         <table class="table table-bordered">
             <thead>

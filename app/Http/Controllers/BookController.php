@@ -21,7 +21,7 @@ class BookController extends Controller
 
         $title = "Books";
         $books = Book::all();
-        return view('books.index', compact('books'), compact('title'));
+        return view('books.index', compact('books', 'title'));
     }
 
 
@@ -52,11 +52,10 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Book $book)
     {
-        $title = "Books";
-        $books = Book::all();
-        return view('books.show', compact('books'), compact('title'));
+        $title = "Book";
+        return view('books.show', compact('book', 'title'));
     }
 
     /**

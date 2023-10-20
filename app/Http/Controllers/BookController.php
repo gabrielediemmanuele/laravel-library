@@ -21,7 +21,7 @@ class BookController extends Controller
 
         $title = "Books";
         $books = Book::all();
-        return view('book', compact('books'), compact('title'));
+        return view('books.index', compact('books'), compact('title'));
     }
 
 

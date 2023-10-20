@@ -43,14 +43,28 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        /* create a new comic*/
+        $book = new Book();
+
+        /* fill with form information */
+        $book->fill($data);
+
+        /* save inside database */
+        $book->save();
+
+        /* 
+        ! REMEMBER TO CODE IN MODEL FOR FILLABLE CONTENTS  
+        */
+        return redirect()->route('books.show', $book);
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * * @return \Illuminate\Http\Response
      */
     public function show(Book $book)
     {

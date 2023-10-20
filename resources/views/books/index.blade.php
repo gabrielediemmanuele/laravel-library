@@ -12,21 +12,17 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th scope="col">
-                        Id
-                    </th>
+                    <th scope="col">Id </th>
                     <th scope="col">Titolo</th>
                     <th scope="col">Autore</th>
                     <th scope="col">Prezzo</th>
-                    <th scope="col">Genre
-                    </th>
+                    <th scope="col">Genre</th>
                     <th scope="col">Casa editrice</th>
                     <th scope="col">Pagine</th>
                     <th scope="col">Edizione</th>
-                    <th scope="col">Numero
-                        di serie</th>
-                    <th scope="col"> Numero di copie</th>
-
+                    <th scope="col">Numero di serie</th>
+                    <th scope="col">Numero di copie</th>
+                    <th scope="col">Icons</th>
                 </tr>
             </thead>
             <tbody>
@@ -38,20 +34,27 @@
                         <td scope="col">{{ $book->price }} </td>
                         <td scope="col">{{ $book->genre }}</td>
                         <td scope="col">{{ $book->editor_house }}</td>
-                        <td scope="col">
-                            {{ $book->pages }}</td>
+                        <td scope="col">{{ $book->pages }}</td>
                         <td scope="col">{{ $book->edition }}</td>
                         <td scope="col">{{ $book->series_number }}</td>
-                        <td scope="col">
-                            {{ $book->copies_number }} </td>
-                        <td class="d-flex flex-row border-bottom-0 gap-2 "> <a
-                                href="
-        {{ route('books.show', $book) }}"> <i class="fa-solid fa-eye"></i>
-                            </a> {{-- <a href="{{ route('books.show', $book) }}"> --}} <i class="fa-solid
-        fa-pencil"></i> </a> {{-- <a href="{{ route('books.show', $book) }}"> --}}
-                            <i class=" fa-solid fa-trash"></i>
-                            </a>
+                        <td scope="col">{{ $book->copies_number }}</td>
+
+                        <td class="d-flex flex-row border-bottom-0 gap-2 "> 
+                            <a href=" {{ route('books.show', $book) }}"> 
+                                <i class="fa-solid fa-eye"></i>
+                            </a> 
+
+                            <a href=" {{ route('books.show', $book) }}"> 
+                                <i class="fa-solid fa-pencil"></i>
+                            </a> 
+
+                            <a href=" {{ route('books.show', $book) }}"> 
+                                <i class="fa-solid fa-trash"></i>
+                            </a> 
+                        </td> 
                     </tr>
                 @endforeach
             </tbody>
         </table>
+    </section>
+@endsection

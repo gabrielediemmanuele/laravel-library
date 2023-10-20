@@ -20,4 +20,4 @@ Route::get('/', [PageController::class, 'index'])->name('home');
 
 /* rotta per il controller dei libri  */
 
-Route::resource('books', BookController::class); //
+Route::resource('books', BookController::class);

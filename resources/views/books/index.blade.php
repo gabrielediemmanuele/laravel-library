@@ -8,7 +8,7 @@
 
 @section('main-content')
     <section class="container mt-5">
-        <a href="{{ route('books.create')}}" class="btn btn-primary">
+        <a href="{{ route('books.create') }}" class="btn btn-primary">
             + Add New Book
         </a>
         <h1>{{ $title }}</h1>
@@ -42,19 +42,19 @@
                         <td scope="col">{{ $book->series_number }}</td>
                         <td scope="col">{{ $book->copies_number }}</td>
 
-                        <td class="d-flex"> 
-                            <a href=" {{ route('books.show', $book) }}" class="mx-1"> 
+                        <td class="d-flex">
+                            <a href=" {{ route('books.show', $book) }}" class="mx-1">
                                 <i class="fa-solid fa-eye"></i>
-                            </a> 
+                            </a>
 
-                            <a href=" {{ route('books.show', $book) }}" class="mx-1"> 
+                            <a href=" {{ route('books.edit', $book) }}" class="mx-1">
                                 <i class="fa-solid fa-pencil"></i>
-                            </a> 
+                            </a>
 
-                            <a href=" {{ route('books.show', $book) }}" class="mx-1"> 
+                            <a href=" {{ route('books.show', $book) }}" class="mx-1">
                                 <i class="fa-solid fa-trash"></i>
-                            </a> 
-                        </td> 
+                            </a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

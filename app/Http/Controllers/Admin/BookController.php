@@ -24,7 +24,7 @@ class BookController extends Controller
 
         $title = "Books";
         $books = Book::all();
-        return view('books.index', compact('books', 'title'));
+        return view('admin.books.index', compact('books', 'title'));
     }
 
 
@@ -35,7 +35,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        return view('books.create');
+        return view('admin.books.create');
     }
 
     /**
@@ -72,7 +72,7 @@ class BookController extends Controller
     public function show(Book $book)
     {
         $title = "Book";
-        return view('books.show', compact('book', 'title'));
+        return view('admin.books.show', compact('book', 'title'));
     }
 
     /**

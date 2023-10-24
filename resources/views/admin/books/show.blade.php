@@ -18,6 +18,6 @@
             <li class="list-group-item"><strong>Numero di Copie: </strong>{{$book->copies_number}}</li>
         </ul>
     </div>
-    <a class="btn btn-primary ml-auto mt-3" href="{{ route('books.index') }}">Torna indietro</a>
+    <a class="btn btn-primary ml-auto mt-3" href="{{ route('admin.books.index') }}">Torna indietro</a>
 </div>
 @endsection

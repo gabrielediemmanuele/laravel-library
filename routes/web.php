@@ -32,7 +32,7 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware('auth')
     ->prefix('admin')
-    ->prefix('admin.')
+    ->name('admin.')
     ->group(function () {
         Route::resource('books', BookController::class);
     });

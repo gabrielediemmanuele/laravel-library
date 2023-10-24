@@ -8,7 +8,7 @@
 
 @section('main-content')
     <section class="container mt-5">
-        <a href="{{ route('books.create') }}" class="btn btn-primary">
+        <a href="{{ route('admin.books.create') }}" class="btn btn-primary">
             + Add New Book
         </a>
         <h1>{{ $title }}</h1>
@@ -43,11 +43,11 @@
                         <td scope="col">{{ $book->copies_number }}</td>
 
                         <td class="d-flex">
-                            <a href=" {{ route('books.show', $book) }}" class="mx-1">
+                            <a href=" {{ route('admin.books.show', $book) }}" class="mx-1">
                                 <i class="fa-solid fa-eye"></i>
                             </a>
 
-                            <a href=" {{ route('books.edit', $book) }}" class="mx-1">
+                            <a href=" {{ route('admin.books.edit', $book) }}" class="mx-1">
                                 <i class="fa-solid fa-pencil"></i>
                             </a>
 
@@ -67,7 +67,7 @@
                                     <div class="modal-footer">
                                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
                                       
-                                      <form action="{{route('books.destroy', $book)}}" method="POST" class="mx-1">
+                                      <form action="{{route('admin.books.destroy', $book)}}" method="POST" class="mx-1">
                                       @csrf
                                       @method('DELETE')
                                       <button class="btn btn-danger">

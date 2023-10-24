@@ -4,14 +4,14 @@
 @section('main-content')
     <div class="container">
     {{-- rotta per l'index.blade (tabella) --}}
-        <a href="{{ route('books.index')}}" class="btn btn-primary mt-3 mb-4"> 
+        <a href="{{ route('admin.books.index')}}" class="btn btn-primary mt-3 mb-4"> 
            Torna a Books
         </a>
 
         <h1 class="text-primary mb-3">Create a new Book</h1>
 
         {{--! form con metodo post che si collega alla funzione store di comicsController --}}
-        <form class="row g-3" action="{{ route('books.store') }}" method="POST" >
+        <form class="row g-3" action="{{ route('admin.books.store') }}" method="POST" >
             @csrf 
             {{-- for visualize correct the form use @csrf protect from fake dates --}}
             <div class="col-3">

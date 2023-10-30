@@ -12,10 +12,10 @@
                         href="{{ route('home') }}" aria-current="page">Home<span
                             class="visually-hidden">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ Route::currentRouteName() == 'admin.books.index' ? 'active' : '' }}"
-                        href="{{ route('admin.books.index') }}">Books</a>
-                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link {{ Route::currentRouteName() == 'books.index' ? 'active' : '' }}"
+                        href="{{ route('books.index') }}">Books</a>
+                </li> -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">Dropdown</a>

@@ -6,7 +6,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endsection
 
-@section('main-content')
+@section('content')
     <section class="container mt-5">
         <a href="{{ route('admin.books.create') }}" class="btn btn-primary">
             + Add New Book
@@ -26,6 +26,8 @@
                     <th scope="col">Numero di serie</th>
                     <th scope="col">Numero di copie</th>
                     <th scope="col">Icons</th>
+          
+
                 </tr>
             </thead>
             <tbody>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 
-@section('main-content')
+@section('content')
     <div class="container">
     {{-- rotta per l'index.blade (tabella) --}}
         <a href="{{ route('admin.books.index')}}" class="btn btn-primary mt-3 mb-4"> 

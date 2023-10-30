@@ -26,6 +26,8 @@
                     <th scope="col">Numero di serie</th>
                     <th scope="col">Numero di copie</th>
                     <th scope="col">Icons</th>
+                    <th scope="col">Esempio</th>
+
                 </tr>
             </thead>
             <tbody>

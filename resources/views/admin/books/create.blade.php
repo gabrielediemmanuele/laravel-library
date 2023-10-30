@@ -54,7 +54,7 @@
                 <input type="text" id="series_number" name="series_number" class="form-control">
             </div>
 
-            <div class="col-12 my-4">
+            {{-- <div class="col-12 my-4">
                 <label for="genre_id" class="form-label ">Tipo</label>
                 <select name="genre_id" id="genre_id" class="@error('genre_id') is-invalid @enderror">
                     <option value="100000">Non categorizzato</option>
@@ -63,7 +63,7 @@
                             {{ $genre->name }}</option>
                     @endforeach
                 </select>
-            </div>
+            </div> --}}
 
             <div class="col-12">
                 <label for="copies_number" class="form-label">Numero copie</label>

@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 /* 
 mi aggancio al model  Book  */
 use App\Models\Book;
+use App\Models\Genre;
 
 class BookController extends Controller
 {
@@ -36,7 +37,8 @@ class BookController extends Controller
      */
     public function create()
     {
-        return view('admin.books.create');
+        $genres = Genre::all();
+        return view('admin.books.create', compact('genres'));
     }
 
     /**

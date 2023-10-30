@@ -4,14 +4,14 @@
 @section('main-content')
     <div class="container">
         {{-- rotta per l'index.blade (tabella) --}}
-        <a href="{{ route('books.index') }}" class="btn btn-primary mt-3 mb-4">
+        <a href="{{ route('admin.books.index') }}" class="btn btn-primary mt-3 mb-4">
             Torna a Books
         </a>
 
         <h1 class="text-primary mb-3">Modifica Book</h1>
 
         {{-- ! form con metodo post che si collega alla funzione update di comicsController --}}
-        <form class="row g-3" action="{{ route('books.update', $book) }}" method="POST">
+        <form class="row g-3" action="{{ route('admin.books.update', $book) }}" method="POST">
             @csrf
             @method('PUT')
             {{-- for visualize correct the form use @csrf protect from fake dates --}}
@@ -30,10 +30,10 @@
                 <input type="text" id="price" name="price" class="form-control" value={{ $book->price }}>
             </div>
 
-            <div class="col-3">
+            {{-- <div class="col-3">
                 <label for="genre" class="form-label">Genere</label>
                 <input type="text" id="genre" name="genre" class="form-control" value={{ $book->genre }}>
-            </div>
+            </div> --}}
 
             <div class="col-3">
                 <label for="editor_house" class="form-label">Casa Editrice</label>

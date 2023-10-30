@@ -35,7 +35,7 @@
                         <td scope="col">{{ $book->title }}</td>
                         <td scope="col">{{ $book->author }}</td>
                         <td scope="col">{{ $book->price }} </td>
-                        <td scope="col">{{ $book->genre }}</td>
+                        <td scope="col">{{ $book->getGenre() }}</td>
                         <td scope="col">{{ $book->editor_house }}</td>
                         <td scope="col">{{ $book->pages }}</td>
                         <td scope="col">{{ $book->edition }}</td>

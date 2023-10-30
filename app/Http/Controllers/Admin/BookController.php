@@ -61,7 +61,7 @@ class BookController extends Controller
         /* 
         ! REMEMBER TO CODE IN MODEL FOR FILLABLE CONTENTS  
         */
-        return redirect()->route('books.show', $book);
+        return redirect()->route('admin.books.show', $book);
     }
 
     /**
@@ -84,7 +84,7 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
-        return view('books.edit', compact('book'));
+        return view('admin.books.edit', compact('book'));
     }
 
     /**
@@ -98,7 +98,7 @@ class BookController extends Controller
     {
         $data = $request->all();
         $book->update($data);
-        return redirect()->route('books.show', $book);
+        return redirect()->route('admin.books.show', $book);
     }
 
     /**
@@ -110,40 +110,40 @@ class BookController extends Controller
     public function destroy(Book $book)
     {
         $book->delete();
-        return redirect()->route('books.index');
+        return redirect()->route('admin.books.index');
     }
     // VALIDATOR
-    private function validation($data)
-    {
+    // private function validation($data)
+    // {
 
-        $validator = Validator::make(
-            $data,
-            [
-                'title' => 'required|string|max:50',
-                'author'=>'required',
-                'price' => 'required',
-                'genre' => 'required|string',
-                'editor_house' => 'required|string|max:30',
-                'pages' => 'required',
-                'edition' => 'required',
-                'series_number' => 'required',
-                'copies_number' => 'required',
-            ],
-            [
-                'title.required' => 'Title is required',
-                'title.string' => 'Title need to be a string',
-                'title.max' => 'Title is max 50 char',
+    //     $validator = Validator::make(
+    //         $data,
+    //         [
+    //             'title' => 'required|string|max:50',
+    //             'author'=>'required',
+    //             'price' => 'required',
+    //             'genre' => 'required|string',
+    //             'editor_house' => 'required|string|max:30',
+    //             'pages' => 'required',
+    //             'edition' => 'required',
+    //             'series_number' => 'required',
+    //             'copies_number' => 'required',
+    //         ],
+    //         [
+    //             'title.required' => 'Title is required',
+    //             'title.string' => 'Title need to be a string',
+    //             'title.max' => 'Title is max 50 char',
                 
-                'author.required'=>'Author is required',
-                'price.required' => 'Price is required',
-                'genre.required' => 'Genre is required',
-                'editor_house.required' => 'Editor house is required',
-                'pages.required' => 'Pages is required',
-                'edition.required' => 'edition is required',
-                'series_number.required' => 'Series number is required',
-                'copies_number.required' => 'Copies number isrequired',
-            ],
-        )->validate();
-        return $validator;
-    }
+    //             'author.required'=>'Author is required',
+    //             'price.required' => 'Price is required',
+    //             'genre.required' => 'Genre is required',
+    //             'editor_house.required' => 'Editor house is required',
+    //             'pages.required' => 'Pages is required',
+    //             'edition.required' => 'edition is required',
+    //             'series_number.required' => 'Series number is required',
+    //             'copies_number.required' => 'Copies number isrequired',
+    //         ],
+    //     )->validate();
+    //     return $validator;
+    // }
 }

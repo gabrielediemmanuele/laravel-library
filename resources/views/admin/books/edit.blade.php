@@ -57,6 +57,17 @@
                     value={{ $book->series_number }}>
             </div>
 
+            <div class="col-12 my-4">
+                <label for="genre_id" class="form-label ">Tipo</label>
+                <select name="genre_id" id="genre_id" class="@error('genre_id') is-invalid @enderror">
+                    <option value="100000">Non categorizzato</option>
+                    @foreach ($genres as $genre)
+                        <option value="{{ $genre->id }}" @if (old('genre_id') == $genre->id) selected @endif>
+                            {{ $genre->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+
             <div class="col-12">
                 <label for="copies_number" class="form-label">Numero copie</label>
                 <input type="number" id="copies_number" name="copies_number" class="form-control"

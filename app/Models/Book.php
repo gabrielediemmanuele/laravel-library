@@ -19,7 +19,7 @@ class Book extends Model
         'edition',
         'series_number',
         'copies_number',
-        'genre_id'
+        'genre_id',
     ];
 
     public function genre()

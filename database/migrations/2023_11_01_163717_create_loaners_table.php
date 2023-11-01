@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->string('name');
             $table->string('surname');
             $table->string('phone_number');
-            $table->string('loan_book/s');
+            $table->string('loan_books');
             $table->timestamps();
         });
     }

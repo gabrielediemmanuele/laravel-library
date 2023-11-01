@@ -3,11 +3,11 @@
 namespace Database\Seeders;
 
 /* 
- ! mi aggaincio al model di books */
+ ! Models */
 use App\Models\Book;
 use App\Models\Genre;
 /* 
- ! uso Faker per generare dei finti libri */
+ ! Faker */
 use Faker\Generator as Faker;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;

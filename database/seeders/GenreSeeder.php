@@ -26,10 +26,9 @@ class GenreSeeder extends Seeder
 
         foreach ($_genres as $_genre) {
             $genre = new Genre();
-
             $genre->name = $_genre;
             $genre->save();
         }
-        
+
     }
 }

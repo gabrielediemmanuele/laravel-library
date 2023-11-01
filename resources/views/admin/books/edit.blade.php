@@ -30,11 +30,6 @@
                 <input type="text" id="price" name="price" class="form-control" value={{ $book->price }}>
             </div>
 
-            {{-- <div class="col-3">
-                <label for="genre" class="form-label">Genere</label>
-                <input type="text" id="genre" name="genre" class="form-control" value={{ $book->genre }}>
-            </div> --}}
-
             <div class="col-3">
                 <label for="editor_house" class="form-label">Casa Editrice</label>
                 <input type="text" id="editor_house" name="editor_house" class="form-control"

@@ -47,7 +47,7 @@
                 @forelse($book->loaners as $loaner)
                   {{ $loaner->name . ' ' . $loaner->surname }} @unless($loop->last) , @else . @endunless
                 @empty
-                  Non in prestito.
+                  <div class="text-success">Non in prestito. 📚✅</div>
                 @endforelse
               </td>
               <td class="d-flex">

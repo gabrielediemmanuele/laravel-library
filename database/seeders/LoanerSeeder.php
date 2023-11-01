@@ -17,13 +17,15 @@ class LoanerSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        $loaner = new Loaner();
+        for ($i = 0; $i < 10; $i++) {
+            $loaner = new Loaner();
 
-        $loaner->name = $faker->firstNameMale();
-        $loaner->surname = $faker->lastName();
-        $loaner->phone_number = $faker->phoneNumber();
-        $loaner->loan_books = $faker->firstNameMale();
+            $loaner->name = $faker->firstNameMale();
+            $loaner->surname = $faker->lastName();
+            $loaner->phone_number = $faker->phoneNumber();
+            $loaner->loan_books = $faker->firstNameMale();
 
-        $loaner->save();
+            $loaner->save();
+        }
     }
 }

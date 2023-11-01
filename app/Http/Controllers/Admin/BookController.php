@@ -5,17 +5,20 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
+
+/* 
+ * Facades */
 use Illuminate\Support\Facades\Validator;
 
 /* 
-mi aggancio al model  Book  */
+ * Models */
 use App\Models\Book;
 use App\Models\Genre;
 
 class BookController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     *todo Display a listing of the resource.
      */
     public function index()
     {
@@ -26,7 +29,7 @@ class BookController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     *todo Show the form for creating a new resource.
      */
     public function create()
     {
@@ -35,7 +38,7 @@ class BookController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     *todo Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
@@ -49,13 +52,13 @@ class BookController extends Controller
         $book->save();
 
         /* 
-        ! REMEMBER TO CODE IN MODEL FOR FILLABLE CONTENTS  
+        ! fill dentro model  
         */
         return redirect()->route('admin.books.show', $book);
     }
 
     /**
-     * Display the specified resource.
+     *todo Display the specified resource.
      */
     public function show(Book $book)
     {
@@ -64,7 +67,7 @@ class BookController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     *todo Show the form for editing the specified resource.
      */
     public function edit(Book $book)
     {
@@ -73,19 +76,18 @@ class BookController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     *todo Update the specified resource in storage.
      */
     public function update(Request $request, Book $book)
     {
         /* Validator -> riga 134 */
         $data = $this->validation($request->all());
-
         $book->update($data);
         return redirect()->route('admin.books.show', $book);
     }
 
     /**
-     * Remove the specified resource from storage.
+     *todo Remove the specified resource from storage.
      */
     public function destroy(Book $book)
     {

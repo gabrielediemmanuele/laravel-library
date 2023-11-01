@@ -28,12 +28,7 @@
                 <label for="price" class="form-label">Prezzo</label>
                 <input type="text" id="price" name="price" class="form-control">
             </div>
-
-            {{-- <div class="col-3">
-                <label for="genre" class="form-label">Genere</label>
-                <input type="text" id="genre" name="genre" class="form-control">
-            </div> --}}
-
+            
             <div class="col-3">
                 <label for="editor_house" class="form-label">Casa Editrice</label>
                 <input type="text" id="editor_house" name="editor_house" class="form-control">
@@ -69,6 +64,7 @@
                 <label for="copies_number" class="form-label">Numero copie</label>
                 <input type="number" id="copies_number" name="copies_number" class="form-control">
             </div>
+
             {{-- bottone per caricare il libro  --}}
             <div class="col-3">
                 <button class="btn btn-primary">+ Crea Libro</button>

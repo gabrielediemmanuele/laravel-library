@@ -16,6 +16,16 @@
             <li class="list-group-item"><strong>Edizione: </strong>{{$book->edition}}</li>
             <li class="list-group-item"><strong>Numero di serie: </strong>{{$book->series_number}}</li>
             <li class="list-group-item"><strong>Numero di Copie: </strong>{{$book->copies_number}}</li>
+            <li class="list-group-item"><strong>In prestito: </strong>
+                @forelse ($book->loaners as $loaner)
+                <div><strong>Nome: </strong>{{ $loaner->name }}</div>
+                <div><strong>Cognome: </strong>{{ $loaner->surname }}</div>
+                <div><strong>Cell: </strong>{{ $loaner->phone_number }}</div>
+                @unless($loop->last)- @else . @endunless
+                 @empty
+                Non è in prestito.
+                @endforelse
+            </li>
         </ul>
     </div>
     <a class="btn btn-primary ml-auto mt-3" href="{{ route('admin.books.index') }}">Torna indietro</a>

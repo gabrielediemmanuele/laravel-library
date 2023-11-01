@@ -49,7 +49,7 @@
                 </a>
                 {{-- icona matita --}}
                 <a href=" {{ route('admin.books.edit', $book) }}" class="mx-1">
-                  <i class="fa-solid fa-pencil"></i>
+                  <i class="fa-solid fa-pencil text-success"></i>
                 </a>
                 {{-- icona cestino --}}
                 <a href="#" data-bs-toggle="modal" data-bs-target="#delete-modal-{{$book->id}}" class="mx-1">

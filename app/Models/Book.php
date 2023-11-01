@@ -31,4 +31,9 @@ class Book extends Model
     {
         return $this->genre ? $this->genre->name : 'Untyped';
     }
+
+    public function loaners()
+    {
+        return $this->belongsToMany(Loaner::class);
+    }
 }

@@ -9,7 +9,7 @@ class Loaner extends Model
 {
     use HasFactory;
 
-    public function posts()
+    public function books()
     {
         return $this->belongsToMany(Book::class);
     }

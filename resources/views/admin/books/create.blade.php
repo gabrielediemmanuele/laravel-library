@@ -3,16 +3,16 @@
 
 @section('content')
     <div class="container">
-    {{-- rotta per l'index.blade (tabella) --}}
-        <a href="{{ route('admin.books.index')}}" class="btn btn-primary mt-3 mb-4"> 
-           Torna a Books
+        {{-- rotta per l'index.blade (tabella) --}}
+        <a href="{{ route('admin.books.index') }}" class="btn btn-primary mt-3 mb-4">
+            Torna a Books
         </a>
 
         <h1 class="text-primary mb-3">Create a new Book</h1>
 
-        {{--! form con metodo post che si collega alla funzione store di comicsController --}}
-        <form class="row g-3" action="{{ route('admin.books.store') }}" method="POST" >
-            @csrf 
+        {{-- ! form con metodo post che si collega alla funzione store di comicsController --}}
+        <form class="row g-3" action="{{ route('admin.books.store') }}" method="POST">
+            @csrf
             {{-- for visualize correct the form use @csrf protect from fake dates --}}
             <div class="col-3">
                 <label for="title" class="form-label">Title</label>
@@ -54,7 +54,7 @@
                 <input type="text" id="series_number" name="series_number" class="form-control">
             </div>
 
-            {{-- <div class="col-12 my-4">
+            <div class="col-12 my-4">
                 <label for="genre_id" class="form-label ">Tipo</label>
                 <select name="genre_id" id="genre_id" class="@error('genre_id') is-invalid @enderror">
                     <option value="100000">Non categorizzato</option>
@@ -63,7 +63,7 @@
                             {{ $genre->name }}</option>
                     @endforeach
                 </select>
-            </div> --}}
+            </div>
 
             <div class="col-12">
                 <label for="copies_number" class="form-label">Numero copie</label>

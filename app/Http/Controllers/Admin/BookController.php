@@ -54,6 +54,39 @@ class BookController extends Controller
 
         $data = $request->all();
 
+        $validator = Validator::make(
+            $data,
+            [
+                'title' => 'required|string|max:50',
+                'author'=>'required',
+                'price' => 'required',
+                'genre' => 'required|string',
+                'editor_house' => 'required|string|max:30',
+                'pages' => 'required',
+                'edition' => 'required',
+                'series_number' => 'required',
+                'copies_number' => 'required',
+                'genre_id'=>'required',
+            ],
+            [
+                'title.required' => 'Title is required',
+                'title.string' => 'Title need to be a string',
+                'title.max' => 'Title is max 50 char',
+                
+                'author.required'=>'Author is required',
+                'price.required' => 'Price is required',
+                'genre.required' => 'Genre is required',
+                'editor_house.required' => 'Editor house is required',
+                'pages.required' => 'Pages is required',
+                'edition.required' => 'edition is required',
+                'series_number.required' => 'Series number is required',
+                'copies_number.required' => 'Copies number is required',
+                'genre_id.required'=>'Type is required'
+            ],
+        );
+
+
+    
         /* lo riempo di informazioni */
         $book->fill($data);
 
@@ -65,6 +98,7 @@ class BookController extends Controller
         */
         return redirect()->route('admin.books.show', $book);
     }
+
 
     /**
      * Display the specified resource.
@@ -86,7 +120,8 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
-        return view('admin.books.edit', compact('book'));
+        $genres = Genre::all();
+        return view('admin.books.edit', compact('book','genres'));
     }
 
     /**
@@ -99,6 +134,40 @@ class BookController extends Controller
     public function update(Request $request, Book $book)
     {
         $data = $request->all();
+        
+        //VALIDATOR 
+        $validator = Validator::make(
+            $data,
+            [
+                'title' => 'required|string|max:50',
+                'author'=>'required',
+                'price' => 'required',
+                'genre' => 'required|string',
+                'editor_house' => 'required|string|max:30',
+                'pages' => 'required',
+                'edition' => 'required',
+                'series_number' => 'required',
+                'copies_number' => 'required',
+                'genre_id'=>'required',
+            ],
+            [
+                'title.required' => 'Title is required',
+                'title.string' => 'Title need to be a string',
+                'title.max' => 'Title is max 50 char',
+                
+                'author.required'=>'Author is required',
+                'price.required' => 'Price is required',
+                'genre.required' => 'Genre is required',
+                'editor_house.required' => 'Editor house is required',
+                'pages.required' => 'Pages is required',
+                'edition.required' => 'edition is required',
+                'series_number.required' => 'Series number is required',
+                'copies_number.required' => 'Copies number is required',
+                'genre_id.required'=>'Type is required'
+            ],
+        );
+
+
         $book->update($data);
         return redirect()->route('admin.books.show', $book);
     }
@@ -114,38 +183,4 @@ class BookController extends Controller
         $book->delete();
         return redirect()->route('admin.books.index');
     }
-    // VALIDATOR
-    // private function validation($data)
-    // {
-
-    //     $validator = Validator::make(
-    //         $data,
-    //         [
-    //             'title' => 'required|string|max:50',
-    //             'author'=>'required',
-    //             'price' => 'required',
-    //             'genre' => 'required|string',
-    //             'editor_house' => 'required|string|max:30',
-    //             'pages' => 'required',
-    //             'edition' => 'required',
-    //             'series_number' => 'required',
-    //             'copies_number' => 'required',
-    //         ],
-    //         [
-    //             'title.required' => 'Title is required',
-    //             'title.string' => 'Title need to be a string',
-    //             'title.max' => 'Title is max 50 char',
-                
-    //             'author.required'=>'Author is required',
-    //             'price.required' => 'Price is required',
-    //             'genre.required' => 'Genre is required',
-    //             'editor_house.required' => 'Editor house is required',
-    //             'pages.required' => 'Pages is required',
-    //             'edition.required' => 'edition is required',
-    //             'series_number.required' => 'Series number is required',
-    //             'copies_number.required' => 'Copies number isrequired',
-    //         ],
-    //     )->validate();
-    //     return $validator;
-    // }
 }

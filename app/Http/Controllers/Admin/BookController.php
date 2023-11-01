@@ -118,13 +118,24 @@ class BookController extends Controller
                 'title.max' => 'Title is max 50 char',
 
                 'author.required' => 'Author is required',
+
                 'price.required' => 'Price is required',
+
                 'genre.required' => 'Genre is required',
+                'genre.string' => 'Genre must be a string',
+
                 'editor_house.required' => 'Editor house is required',
+                'editor_house.string' => 'Editor house must be a string',
+                'editor_house.max' => 'Editor max 30 char',
+
                 'pages.required' => 'Pages is required',
+
                 'edition.required' => 'edition is required',
+
                 'series_number.required' => 'Series number is required',
+
                 'copies_number.required' => 'Copies number is required',
+
                 'genre_id.required' => 'Type is required'
             ],
         )->validate();

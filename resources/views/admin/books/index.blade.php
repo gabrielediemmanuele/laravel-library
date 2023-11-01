@@ -25,6 +25,7 @@
             <th scope="col">Edizione</th>
             <th scope="col">Numero di serie</th>
             <th scope="col">Numero di copie</th>
+            <th scope="col">In Prestito a</th>
             <th scope="col">Icons</th>
           </tr>
         </thead>
@@ -42,6 +43,13 @@
               <td scope="col">{{ $book->edition }}</td>
               <td scope="col">{{ $book->series_number }}</td>
               <td scope="col">{{ $book->copies_number }}</td>
+              <td>
+                @forelse($book->loaners as $loaner)
+                  {{ $loaner->name . ' ' . $loaner->surname }} @unless($loop->last) , @else . @endunless
+                @empty
+                  -
+                @endforelse
+              </td>
               <td class="d-flex">
                 {{-- icona occhio --}}
                 <a href=" {{ route('admin.books.show', $book) }}" class="mx-1">
@@ -49,7 +57,7 @@
                 </a>
                 {{-- icona matita --}}
                 <a href=" {{ route('admin.books.edit', $book) }}" class="mx-1">
-                  <i class="fa-solid fa-pencil"></i>
+                  <i class="fa-solid fa-pencil text-success"></i>
                 </a>
                 {{-- icona cestino --}}
                 <a href="#" data-bs-toggle="modal" data-bs-target="#delete-modal-{{$book->id}}" class="mx-1">

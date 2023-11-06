@@ -14,7 +14,7 @@ return new class extends Migration {
     {
         Schema::create('formats', function (Blueprint $table) {
             $table->id();
-            $table->string('format_name');
+            $table->string('label');
             $table->timestamps();
         });
     }

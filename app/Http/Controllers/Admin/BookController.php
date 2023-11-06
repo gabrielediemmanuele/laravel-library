@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
 use App\Models\Format;
+use Illuminate\Support\Arr;
 
 /* 
  * Facades */
@@ -35,7 +36,7 @@ class BookController extends Controller
     public function create()
     {
         $genres = Genre::all();
-        $formats = Format::orderBy('label')->get();
+        $formats = Format::all();
         return view('admin.books.create', compact('genres', 'formats'));
     }
 
@@ -53,6 +54,9 @@ class BookController extends Controller
         /* le salvo nel database */
         $book->save();
 
+        if (Arr::exists($data, "formats")) {
+            $book->formats()->attach($data["formats"]);
+        }
         /* 
         ! fill dentro model  
         */
@@ -112,6 +116,7 @@ class BookController extends Controller
                 'editor_house' => 'required|string|max:30',
                 'pages' => 'required',
                 'edition' => 'required',
+                'formats' => 'nullable|exists:formats,id',
                 'series_number' => 'required',
                 'copies_number' => 'required',
                 'genre_id' => 'required',
@@ -135,6 +140,8 @@ class BookController extends Controller
                 'pages.required' => 'Pages is required',
 
                 'edition.required' => 'edition is required',
+
+                'formats.exists' => 'I formati inseriti non sono validi',
 
                 'series_number.required' => 'Series number is required',
 

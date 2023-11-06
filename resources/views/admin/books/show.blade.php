@@ -15,15 +15,11 @@
                 <li class="list-group-item"><strong>Pagina: </strong>{{ $book->pages }}</li>
                 <li class="list-group-item"><strong>Edizione: </strong>{{ $book->edition }}</li>
                 <li class="list-group-item"><strong>Formato: </strong>
-
                     @forelse ($book->formats as $format)
                         {{ $format->label }}
-
-
                     @empty
                         Nessun tag associato
                     @endforelse
-
                 </li>
 
 

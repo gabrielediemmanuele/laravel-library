@@ -46,15 +46,15 @@
 
             <label class="form-label">Formati</label>
 
-            <div class="form-check @error('formats') is-invalid @enderror p-0">
+            <div class="form-check">
                 @foreach ($formats as $format)
                     <input
                     type="checkbox"
                     id="format-{{ $format->id }}"
                     value="{{ $format->id }}"
-                    name="format[]"
+                    name="formats[]"
                     class="form-check-control"
-                    @if (in_array($format->id, old('format', $book_formats ?? []))) checked @endif
+                    @if (in_array($format->id, old('formats', []))) checked @endif
                     >
                     <label for="format-{{ $format->id }}">
                         {{ $format->label }}
@@ -62,18 +62,18 @@
                     <br>
                 @endforeach
             </div>
-@error('tags')
-  <div class="invalid-feedback">
-    {{ $message }}
-  </div>
-@enderror
+            {{-- @error('formats')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+            @enderror --}}
 
             <div class="col-3">
                 <label for="series_number" class="form-label">Numero di serie</label>
                 <input type="text" id="series_number" name="series_number" class="form-control">
             </div>
 
-            <div class="col-12 my-4">
+            {{-- <div class="col-12 my-4">
                 <label for="genre_id" class="form-label ">Tipo</label>
                 <select name="genre_id" id="genre_id" class="@error('genre_id') is-invalid @enderror">
                     <option value="100000">Non categorizzato</option>
@@ -82,7 +82,7 @@
                             {{ $genre->name }}</option>
                     @endforeach
                 </select>
-            </div>
+            </div> --}}
 
             <div class="col-12">
                 <label for="copies_number" class="form-label">Numero copie</label>

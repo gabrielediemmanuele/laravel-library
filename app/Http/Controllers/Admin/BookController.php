@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
+use App\Models\Format;
 
 /* 
  * Facades */
@@ -34,7 +35,8 @@ class BookController extends Controller
     public function create()
     {
         $genres = Genre::all();
-        return view('admin.books.create', compact('genres'));
+        $formats = Format::orderBy('label')->get();
+        return view('admin.books.create', compact('genres', 'formats'));
     }
 
     /**

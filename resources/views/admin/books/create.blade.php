@@ -44,6 +44,30 @@
                 <input type="number" id="edition" name="edition" class="form-control">
             </div>
 
+            <label class="form-label">Formati</label>
+
+            <div class="form-check @error('formats') is-invalid @enderror p-0">
+                @foreach ($formats as $format)
+                    <input
+                    type="checkbox"
+                    id="format-{{ $format->id }}"
+                    value="{{ $format->id }}"
+                    name="format[]"
+                    class="form-check-control"
+                    @if (in_array($format->id, old('format', $book_formats ?? []))) checked @endif
+                    >
+                    <label for="format-{{ $format->id }}">
+                        {{ $format->label }}
+                    </label>
+                    <br>
+                @endforeach
+            </div>
+@error('tags')
+  <div class="invalid-feedback">
+    {{ $message }}
+  </div>
+@enderror
+
             <div class="col-3">
                 <label for="series_number" class="form-label">Numero di serie</label>
                 <input type="text" id="series_number" name="series_number" class="form-control">

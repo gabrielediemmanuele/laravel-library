@@ -70,7 +70,7 @@
             </div>
             {{-- bottone per salvare la modifica del libro  --}}
             <div class="col-3">
-                <button class="btn btn-primary">Salva Libro</button>
+                <button type="submit" class="btn btn-primary">Salva Libro</button>
             </div>
         </form>
     </div>

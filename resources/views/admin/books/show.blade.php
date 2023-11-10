@@ -21,8 +21,6 @@
                         Nessun tag associato
                     @endforelse
                 </li>
-
-
                 <li class="list-group-item"><strong>Numero di serie: </strong>{{ $book->series_number }}</li>
                 <li class="list-group-item"><strong>Numero di Copie: </strong>{{ $book->copies_number }}</li>
             </ul>

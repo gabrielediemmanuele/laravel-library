@@ -42,7 +42,12 @@ class BookController extends Controller
      */
     public function show($id)
     {
-        //
+        $book = Book::select('id', 'title', 'author', 'price', 'editor_house', 'pages', 'edition', 'series_number', 'copies_number', 'genre_id')
+            ->where('id', $id)
+            ->with('genre:id,name')
+            ->first();
+        return response()->json($book);
+
     }
 
 }
